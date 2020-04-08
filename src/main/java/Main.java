@@ -13,10 +13,10 @@ public class Main {
 
     private static void readDataFromFiles(Vector vector, Point point, Serializer serializer) {
         try {
-            File trianglefile = new File("vector.xml");
+            File vectorfile = new File("vector.xml");
             File pointfile = new File("point.xml");
-            if(trianglefile.exists())
-                serializer.read(vector, trianglefile);
+            if(vectorfile.exists())
+                serializer.read(vector, vectorfile);
             else System.out.println("File not exists");
             if(pointfile.exists())
                 serializer.read(point, pointfile);
@@ -28,10 +28,10 @@ public class Main {
 
     public static void writeVector(Vector vector, Serializer serializer) {
         try {
-            File trianglefile = new File("vector.xml");
-            if(!trianglefile.exists())
-                trianglefile.createNewFile();
-            serializer.write(vector, trianglefile);
+            File vectorfile = new File("vector.xml");
+            if(!vectorfile.exists())
+                vectorfile.createNewFile();
+            serializer.write(vector, vectorfile);
         } catch (Exception e) {
             System.out.println(e.getLocalizedMessage());
         }
